@@ -1,9 +1,9 @@
 syms x n
 a0=1/4*(int(sym('2'), -2,-1) + int(sym('1'), -1,1) + int(sym('-1'), 1,2))
-an=1/2*(int(sym('2*cos(n*pi*x)'), -2,-1) + int(sym('1*cos(n*pi*x)'), -1,1) + int(sym('(-1)*cos(n*pi*x)'), 1,2))
-bn=1/2*(int(sym('2*sin(n*pi*x)'), -2,-1) + int(sym('1*sin(n*pi*x)'), -1,1) + int(sym('(-1)*sin(n*pi*x)'), 1,2))
-f1=an*cos(n*pi*x)
-f2=bn*sin(n*pi*x)
+an=1/2*(int(sym('2*cos(n*pi*x/2)'), -2,-1) + int(sym('1*cos(n*pi*x/2)'), -1,1) + int(sym('(-1)*cos(n*pi*x/2)'), 1,2))
+bn=1/2*(int(sym('2*sin(n*pi*x/2)'), -2,-1) + int(sym('1*sin(n*pi*x/2)'), -1,1) + int(sym('(-1)*sin(n*pi*x/2)'), 1,2))
+f1=an*cos(n*pi*x/2)
+f2=bn*sin(n*pi*x/2)
 f=f1+f2
 z5=symsum(f, 'n', 1,5) + a0
 z100=symsum(f, 'n', 1,100) + a0
