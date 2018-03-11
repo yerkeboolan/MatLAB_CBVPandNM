@@ -1,11 +1,11 @@
 syms x n
 pi=3,14
 a0=1/(2*pi)*(int(sym('x*cos(x)'), -pi,pi))
-an=1/pi*(int(sym('x*cos(x)*cos(n*x*pi/pi)'), -pi,pi))
-bn=1/pi*(int(sym('x*cos(x)*sin(n*x*pi/pi)'), -pi,pi))
+an=1/pi*(int(sym('x*cos(x)*cos((n*x*pi)/pi)'), -pi,pi))
+bn=1/pi*(int(sym('x*cos(x)*sin((n*x*pi)/pi)'), -pi,pi))
 b1=1/pi*(int(sym('x*cos(x)*sin(x)'), -pi,pi))
-f1=an*cos(n*x*pi/pi)
-f2=bn*sin(n*x*pi/pi)
+f1=an*cos((n*x*pi)/pi)
+f2=bn*sin((n*x*pi)/pi)
 f=f1+f2
 z5=symsum(f, 'n', 2,5) + a0 + b1
 z100=symsum(f, 'n', 2,100) + a0 + b1
